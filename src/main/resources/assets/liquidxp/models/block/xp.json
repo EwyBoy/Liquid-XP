@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "liquidxp:block/fluid/xp_still"
+  }
+}

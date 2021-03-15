@@ -1,0 +1,7 @@
+
+#Liquid XP - Config File
+[SETTINGS]
+	#XP -> Liquid : Conversion Ratio [Max: 2147483647mB]
+	#Range: > 1
+	experienceToLiquidRatio = 20
+

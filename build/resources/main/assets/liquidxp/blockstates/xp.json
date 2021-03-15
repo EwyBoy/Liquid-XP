@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "level=0" : { "model": "liquidxp:block/xp" },
+    "level=1" : { "model": "liquidxp:block/xp" },
+    "level=2" : { "model": "liquidxp:block/xp" },
+    "level=3" : { "model": "liquidxp:block/xp" },
+    "level=4" : { "model": "liquidxp:block/xp" },
+    "level=5" : { "model": "liquidxp:block/xp" },
+    "level=6" : { "model": "liquidxp:block/xp" },
+    "level=7" : { "model": "liquidxp:block/xp" },
+    "level=8" : { "model": "liquidxp:block/xp" },
+    "level=9" : { "model": "liquidxp:block/xp" },
+    "level=10": { "model": "liquidxp:block/xp" },
+    "level=11": { "model": "liquidxp:block/xp" },
+    "level=12": { "model": "liquidxp:block/xp" },
+    "level=13": { "model": "liquidxp:block/xp" },
+    "level=14": { "model": "liquidxp:block/xp" },
+    "level=15": { "model": "liquidxp:block/xp" }
+  }
+}

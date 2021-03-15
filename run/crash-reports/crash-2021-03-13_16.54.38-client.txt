@@ -1,0 +1,148 @@
+---- Minecraft Crash Report ----
+// You should try our sister game, Minceraft!
+
+Time: 3/13/21 4:54 PM
+Description: Exception while adding particle
+
+java.lang.ClassCastException: net.minecraft.client.particle.ParticleManager$AnimatedSpriteImpl cannot be cast to net.minecraft.client.renderer.texture.TextureAtlasSprite
+	at com.ewyboy.liquidxp.client.particle.SprayParticle.<init>(SprayParticle.java:15) ~[main/:?] {re:classloading}
+	at com.ewyboy.liquidxp.client.particle.SprayParticle$Factory.makeParticle(SprayParticle.java:43) ~[main/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at com.ewyboy.liquidxp.client.particle.SprayParticle$Factory.makeParticle(SprayParticle.java:33) ~[main/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.particle.ParticleManager.makeParticle(ParticleManager.java:252) ~[forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.particle.ParticleManager.addParticle(ParticleManager.java:240) ~[forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.WorldRenderer.addParticleUnchecked(WorldRenderer.java:2205) ~[forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.WorldRenderer.addParticle(WorldRenderer.java:2173) ~[forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.WorldRenderer.addParticle(WorldRenderer.java:2168) ~[forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.world.ClientWorld.addParticle(ClientWorld.java:609) ~[forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at com.ewyboy.liquidxp.common.content.tile.SprinklerTile.tick(SprinklerTile.java:30) ~[main/:?] {re:classloading}
+	at net.minecraft.world.World.tickBlockEntities(World.java:538) ~[forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.world.ClientWorld.tickEntities(ClientWorld.java:181) ~[forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1530) ~[forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:979) ~[forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:612) ~[forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:184) ~[forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_181] {}
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_181] {}
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_181] {}
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_181] {}
+	at net.minecraftforge.userdev.FMLUserdevClientLaunchProvider.lambda$launchService$0(FMLUserdevClientLaunchProvider.java:52) ~[forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-8.0.9.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54) [modlauncher-8.0.9.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72) [modlauncher-8.0.9.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:82) [modlauncher-8.0.9.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:66) [modlauncher-8.0.9.jar:?] {}
+	at net.minecraftforge.userdev.LaunchTesting.main(LaunchTesting.java:105) [forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at com.ewyboy.liquidxp.client.particle.SprayParticle.<init>(SprayParticle.java:15) ~[?:?] {re:classloading}
+	at com.ewyboy.liquidxp.client.particle.SprayParticle$Factory.makeParticle(SprayParticle.java:43) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at com.ewyboy.liquidxp.client.particle.SprayParticle$Factory.makeParticle(SprayParticle.java:33) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.particle.ParticleManager.makeParticle(ParticleManager.java:252) ~[?:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.particle.ParticleManager.addParticle(ParticleManager.java:240) ~[?:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.WorldRenderer.addParticleUnchecked(WorldRenderer.java:2205) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+-- Particle being added --
+Details:
+	ID: liquidxp:spray
+	Parameters: liquidxp:spray
+	Position: -70.00,65.20,220.00 - World: (-70,65,220), Chunk: (at 10,4,12 in -5,13; contains blocks -80,0,208 to -65,255,223), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+Stacktrace:
+	at net.minecraft.client.renderer.WorldRenderer.addParticle(WorldRenderer.java:2173) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.WorldRenderer.addParticle(WorldRenderer.java:2168) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.world.ClientWorld.addParticle(ClientWorld.java:609) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at com.ewyboy.liquidxp.common.content.tile.SprinklerTile.tick(SprinklerTile.java:30) ~[?:?] {re:classloading}
+
+
+-- Block entity being ticked --
+Details:
+	Name: liquidxp:sprinkler // com.ewyboy.liquidxp.common.content.tile.SprinklerTile
+	Block: Block{liquidxp:sprinkler}[enabled=true,facing=north]
+	Block location: World: (-70,64,220), Chunk: (at 10,4,12 in -5,13; contains blocks -80,0,208 to -65,255,223), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Block: Block{liquidxp:sprinkler}[enabled=true,facing=north]
+	Block location: World: (-70,64,220), Chunk: (at 10,4,12 in -5,13; contains blocks -80,0,208 to -65,255,223), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+Stacktrace:
+	at net.minecraft.world.World.tickBlockEntities(World.java:538) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.world.ClientWorld.tickEntities(ClientWorld.java:181) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+
+
+-- Affected level --
+Details:
+	All players: 1 total; [ClientPlayerEntity['Dev'/4673, l='ClientLevel', x=-69.51, y=64.00, z=217.14]]
+	Chunk stats: Client Chunk Cache: 841, 529
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (-80,64,224), Chunk: (at 0,4,0 in -5,14; contains blocks -80,0,224 to -65,255,239), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 392 game time, 1 day time
+	Server brand: forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.world.ClientWorld.fillCrashReport(ClientWorld.java:465) ~[forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2091) ~[forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:628) ~[forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:184) ~[forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_181] {}
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_181] {}
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_181] {}
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_181] {}
+	at net.minecraftforge.userdev.FMLUserdevClientLaunchProvider.lambda$launchService$0(FMLUserdevClientLaunchProvider.java:52) ~[forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-8.0.9.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54) [modlauncher-8.0.9.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72) [modlauncher-8.0.9.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:82) [modlauncher-8.0.9.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:66) [modlauncher-8.0.9.jar:?] {}
+	at net.minecraftforge.userdev.LaunchTesting.main(LaunchTesting.java:105) [forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.5
+	Minecraft Version ID: 1.16.5
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_181, Oracle Corporation
+	Java VM Version: Dynamic Code Evolution 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 274548512 bytes (261 MB) / 935108608 bytes (891 MB) up to 3101687808 bytes (2958 MB)
+	CPUs: 8
+	JVM Flags: 1 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	ModLauncher: 8.0.9+86+master.3cf110c
+	ModLauncher launch target: fmluserdevclient
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		/mixin-0.8.2.jar mixin PLUGINSERVICE 
+		/eventbus-4.0.0.jar eventbus PLUGINSERVICE 
+		/forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-launcher.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-launcher.jar runtime_enum_extender PLUGINSERVICE 
+		/accesstransformers-3.0.1.jar accesstransformer PLUGINSERVICE 
+		/forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-launcher.jar capability_inject_definalize PLUGINSERVICE 
+		/forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-launcher.jar runtimedistcleaner PLUGINSERVICE 
+		/mixin-0.8.2.jar mixin TRANSFORMATIONSERVICE 
+		/forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16.3-launcher.jar fml TRANSFORMATIONSERVICE 
+	FML: 36.0
+	Forge: net.minecraftforge:36.0.45
+	FML Language Providers: 
+		javafml@36.0
+		minecraft@1
+	Mod List: 
+		client-extra.jar                                  |Minecraft                     |minecraft                     |1.16.5              |DONE      |a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		forge-1.16.5-36.0.45_mapped_snapshot_20201028-1.16|Forge                         |forge                         |36.0.45             |DONE      |NOSIGNATURE
+		main                                              |Bibliotheca                   |bibliotheca                   |NONE                |DONE      |NOSIGNATURE
+		main                                              |Quick Harvest                 |quickharvest                  |NONE                |DONE      |NOSIGNATURE
+		main                                              |Liquid XP                     |liquidxp                      |NONE                |DONE      |NOSIGNATURE
+		main                                              |World Stripper                |worldstripper                 |NONE                |DONE      |NOSIGNATURE
+		main                                              |ITank                         |itank                         |NONE                |DONE      |NOSIGNATURE
+		Hwyla-1.10.11-B78_1.16.2_mapped_snapshot_20201028-|Waila                         |waila                         |1.10.11-B78_1.16.2  |DONE      |NOSIGNATURE
+	Crash Report UUID: bb5344c9-e331-48fa-84b7-84385c59e27c
+	Launched Version: MOD_DEV
+	Backend library: LWJGL version 3.2.2 build 10
+	Backend API: GeForce GTX 970/PCIe/SSE2 GL version 4.6.0 NVIDIA 461.72, NVIDIA Corporation
+	GL Caps: Using framebuffer using OpenGL 3.0
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'forge'
+	Type: Client (map_client.txt)
+	Graphics mode: fancy
+	Resource Packs: 
+	Current Language: English (US)
+	CPU: 8x Intel(R) Core(TM) i7-3820 CPU @ 3.60GHz
